@@ -41,4 +41,3 @@ function verificarResposta(resposta) {
 }
 
 mostrarPergunta();  // Inicia o quiz com a primeira pergunta
-a
