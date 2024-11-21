@@ -10,7 +10,11 @@ const perguntas = [
         respostaCorreta: "A", 
         respostas: ["A) Alan Turing", "B) Bill Gates", "C) Steve Jobs"] 
     },
-    // Adicione mais perguntas se desejar
+    { 
+        pergunta: "Qual foi a primeira inteligência artificial?", 
+        respostaCorreta: "B", 
+        respostas: ["A) 1999", "B) 1943", "C) 2002"] 
+    },
 ];
 
 const perguntasContainer = document.querySelector('.quiz');
