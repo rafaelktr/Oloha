@@ -13,16 +13,22 @@ const perguntas = [
     // Adicione mais perguntas se desejar
 ];
 
-function mostrarPergunta() {
-    const pergunta = perguntas[perguntaAtual];
-    document.getElementById('pergunta').textContent = pergunta.pergunta;
-    
-    const botoes = document.querySelectorAll('button');
-    botoes.forEach((botao, index) => {
-        botao.textContent = pergunta.respostas[index];
-    });
-}
+const perguntasContainer = document.querySelector('.quiz');
+const feedbackElement = document.getElementById('feedback');
 
+function mostrarPergunta() {
+    perguntasContainer.innerHTML = ''; // Limpa as perguntas anteriores
+
+    const pergunta = perguntas[perguntaAtual];
+    const section = document.createElement('section');
+    section.innerHTML = `
+        <h2>${pergunta.pergunta}</h2>
+        ${pergunta.respostas.map((resposta, index) => `
+            <button onclick="verificarResposta('${index}')">${resposta}</button>
+        `).join('')}
+    `;
+    perguntasContainer.appendChild(section);
+}
 function verificarResposta(resposta) {
     const pergunta = perguntas[perguntaAtual];
     
